@@ -13,9 +13,10 @@ public class SdaApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(SdaApplication.class, args);
 
-        Email email =
-                context.getBean("email", Email.class);
+        Car masinaRosie = context.getBean("masinaRosie", Car.class);
+        Car masinaAlbastra = context.getBean("masinaAlbastra", Car.class);
 
-        email.printEmail();
-      }
+        System.out.println(masinaRosie);
+        System.out.println(masinaAlbastra);
+    }
 }
