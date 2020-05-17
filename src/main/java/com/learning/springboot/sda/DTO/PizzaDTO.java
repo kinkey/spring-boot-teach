@@ -5,15 +5,18 @@ import java.util.List;
 public class PizzaDTO {
 
     String name;
-    String type;
-    BlatDTO blat;
+    String extraMozzarella;
+    String blat;
     List<IngredientDTO> ingrediente;
 
-    public PizzaDTO(String name, String type, BlatDTO blat, List<IngredientDTO> ingrediente) {
+    public PizzaDTO(String name, String type, String blat, List<IngredientDTO> ingrediente) {
         this.name = name;
-        this.type = type;
+        this.extraMozzarella = type;
         this.blat = blat;
         this.ingrediente = ingrediente;
+    }
+
+    public PizzaDTO() {
     }
 
     public String getName() {
@@ -24,19 +27,19 @@ public class PizzaDTO {
         this.name = name;
     }
 
-    public String getType() {
-        return type;
+    public String getExtraMozzarella() {
+        return extraMozzarella;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setExtraMozzarella(String extraMozzarella) {
+        this.extraMozzarella = extraMozzarella;
     }
 
-    public BlatDTO getBlat() {
+    public String getBlat() {
         return blat;
     }
 
-    public void setBlat(BlatDTO blat) {
+    public void setBlat(String blat) {
         this.blat = blat;
     }
 
