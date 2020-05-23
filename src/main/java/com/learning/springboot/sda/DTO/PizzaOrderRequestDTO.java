@@ -5,6 +5,7 @@ import java.util.List;
 public class PizzaOrderRequestDTO {
     public String orderPersonName;
     public List<PizzaOrderItemDTO> orderItems;
+    public PizzaOrderItemDTO orderItem;
 
     @Override
     public String toString() {
