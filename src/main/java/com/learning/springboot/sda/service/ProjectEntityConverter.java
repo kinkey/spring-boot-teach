@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public class ProjectEntityConverter implements
         EntityConverter<Project, ProjectDTO>{
 
-
+    @Override
     public ProjectDTO convertToDTO(Project projectEntity){
         ProjectDTO dto = new ProjectDTO();
 
