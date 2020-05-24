@@ -20,8 +20,9 @@ public class Project {
     @Column(name = "description")
     String description;
 
-    //MULTIPLED PROJECTS WITH THE SAME STATUS
-
+    @ManyToOne
+    @JoinColumn(name = "statusId")
+    Status status;
 
     public Integer getProjectId() {
         return projectId;
@@ -55,7 +56,13 @@ public class Project {
         this.description = description;
     }
 
+    public Status getStatus() {
+        return status;
+    }
 
+    public void setStatus(Status status) {
+        this.status = status;
+    }
 
     @Override
     public String toString() {
@@ -64,6 +71,7 @@ public class Project {
                 ", name='" + name + '\'' +
                 ", shortname='" + shortname + '\'' +
                 ", description='" + description + '\'' +
+                ", status=" + status +
                 '}';
     }
 }

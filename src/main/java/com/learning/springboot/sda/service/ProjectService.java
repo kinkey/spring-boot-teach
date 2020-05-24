@@ -20,6 +20,11 @@ public class ProjectService {
     }
 
     @Transactional
+    public Optional<Project> getProjectByShortName(String shortname){
+        return projectRepository.getByShortname(shortname);
+    }
+
+    @Transactional
     public void saveProject(Project project){
         projectRepository.save(project);
     }
