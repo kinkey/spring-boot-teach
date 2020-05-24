@@ -9,9 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -48,8 +46,6 @@ public class ProjectController {
         return new ResponseEntity<ProjectDTO>(projectDTO, HttpStatus.OK);
     }
 
-
-
     @GetMapping("/projectFromConverter")
     public ResponseEntity<ProjectDTO> getProjectByIdConverter(){
         Optional<Project> projectById = projectService.getProjectById(2);
@@ -59,5 +55,12 @@ public class ProjectController {
 
         return new ResponseEntity<ProjectDTO>(
                 entityConverter.convertToDTO(projectEntity), HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/project", consumes = "application/json")
+    public ResponseEntity<Project> createProjectFromProjectCreationDTO(@RequestBody ProjectDTO projectDTO){
+        Project project = projectService.saveProject(projectDTO);
+
+        return new ResponseEntity<Project>(project, HttpStatus.OK);
     }
 }

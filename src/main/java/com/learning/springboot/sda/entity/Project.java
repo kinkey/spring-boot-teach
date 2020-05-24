@@ -1,10 +1,22 @@
 package com.learning.springboot.sda.entity;
 
+import com.learning.springboot.sda.DTO.ProjectDTO;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "project")
 public class Project {
+
+    public Project() {
+    }
+
+    public Project(ProjectDTO projectDTO, Status status) {
+        this.name = projectDTO.name;
+        this.shortname = projectDTO.shortName;
+        this.description = projectDTO.description;
+        this.status = status;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

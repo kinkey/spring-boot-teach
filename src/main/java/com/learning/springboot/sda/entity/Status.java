@@ -7,6 +7,13 @@ import java.util.List;
 @Table(name="status")
 public class Status {
 
+    public Status() {
+    }
+
+    public Status(String statusName) {
+        this.statusName = statusName;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "statusId")

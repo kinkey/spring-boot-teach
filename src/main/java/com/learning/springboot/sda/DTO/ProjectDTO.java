@@ -6,7 +6,7 @@ public class ProjectDTO {
     public String name;
     public String shortName;
     public String description;
-    public String status;
+    public String statusName;
 
     public ProjectDTO() {
     }
@@ -17,9 +17,19 @@ public class ProjectDTO {
         this.shortName = projectEntity.getDescription();
 
         if(projectEntity.getStatus() != null){
-            this.status = projectEntity.getStatus().getStatusName();
+            this.statusName = projectEntity.getStatus().getStatusName();
         } else {
-            this.status = "Undefined Status";
+            this.statusName = "Undefined Status";
         }
+    }
+
+    @Override
+    public String toString() {
+        return "ProjectDTO{" +
+                "name='" + name + '\'' +
+                ", shortName='" + shortName + '\'' +
+                ", description='" + description + '\'' +
+                ", statusName='" + statusName + '\'' +
+                '}';
     }
 }

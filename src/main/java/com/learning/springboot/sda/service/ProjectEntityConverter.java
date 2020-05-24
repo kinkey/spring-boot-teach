@@ -17,15 +17,21 @@ public class ProjectEntityConverter implements
         dto.shortName = projectEntity.getDescription();
 
         if(projectEntity.getStatus() != null){
-            dto.status = projectEntity.getStatus().getStatusName();
+            dto.statusName = projectEntity.getStatus().getStatusName();
         } else {
-            dto.status = "Undefined Status";
+            dto.statusName = "Undefined Status";
         }
         return dto;
     }
 
     @Override
     public Project convertToEntity(ProjectDTO dto) {
-        return null;
+        Project projectEntity = new Project();
+
+        projectEntity.setName(dto.name);
+        projectEntity.setShortname(dto.shortName);
+        projectEntity.setDescription(dto.description);
+
+        return projectEntity;
     }
 }
