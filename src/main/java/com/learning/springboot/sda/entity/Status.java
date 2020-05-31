@@ -1,5 +1,6 @@
 package com.learning.springboot.sda.entity;
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 
@@ -20,6 +21,7 @@ public class Status {
     Integer statusId;
 
     @Column(name = "statusName", nullable = false)
+    @Size(max=30)
     String statusName;
 
     @OneToMany(mappedBy = "status")
