@@ -37,5 +37,14 @@ public class PizzaController {
         return new ResponseEntity<List<PizzaDTO>>(pizzaDTOS, HttpStatus.OK);
     }
 
+    @GetMapping(value = "/hw", produces = "application/json")
+    public ResponseEntity<String> getValue22(){
+
+
+
+
+        return new ResponseEntity<String>("HELLO WORLD", HttpStatus.OK);
+    }
+
 
 }

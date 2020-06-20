@@ -26,6 +26,8 @@ public class LnkedLst {
             }
             tempHead.next = new Node(value);
         }
+
+
     }
 
 
